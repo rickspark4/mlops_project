@@ -22,8 +22,8 @@ os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
 os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 
 dagshub_url = "https://dagshub.com"
-repo_owner = "vikashdas770"
-repo_name = "YT-Capstone-Project"
+repo_owner = "rickspark4"
+repo_name = "mlops_project"
 # Set up MLflow tracking URI
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 # -------------------------------------------------------------------------------------
@@ -31,8 +31,8 @@ mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 
 # Below code block is for local use
 # -------------------------------------------------------------------------------------
-# mlflow.set_tracking_uri('https://dagshub.com/vikashdas770/YT-Capstone-Project.mlflow')
-# dagshub.init(repo_owner='vikashdas770', repo_name='YT-Capstone-Project', mlflow=True)
+# mlflow.set_tracking_uri('https://dagshub.com/rickspark4/mlops_project.mlflow')
+# dagshub.init(repo_owner='rickspark4', repo_name='mlops_project', mlflow=True)
 # -------------------------------------------------------------------------------------
 
 
@@ -63,7 +63,7 @@ def register_model(model_name: str, model_info: dict):
         client.transition_model_version_stage(
             name=model_name,
             version=model_version.version,
-            stage="Staging"
+            stage="staging"
         )
         
         logging.debug(f'Model {model_name} version {model_version.version} registered and transitioned to Staging.')
