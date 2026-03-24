@@ -102,6 +102,9 @@ def main():
 
         accesskey = os.getenv("AWS_ACCESS_KEY_ID")
         secretkey = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+        logging.debug('accesskey', accesskey[0:5])
+        logging.debug('secretkey', secretkey[0:5])
       
 
 
